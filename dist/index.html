@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>Rivals Arena — 3D Hero Shooter (Phone/Tablet)</title>
+<meta name="description" content="Marvel Rivals-style 3D hero shooter playable on phone, tablet and desktop. Touch joysticks, hero select, bots, 3D arena." />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<canvas id="scene" aria-label="3D arena"></canvas>
+
+<div id="hud-top">
+  <div id="logo">RIVALS <span>ARENA</span></div>
+  <div id="score">YOU 0 : 0 BOTS &nbsp;•&nbsp; <span id="timer">05:00</span></div>
+  <div id="fps">60 fps</div>
+</div>
+
+<div id="crosshair"><div></div></div>
+
+<div id="hud-bottom-left">
+  <div id="hp-wrap"><div id="hp-fill"></div><span id="hp-text">100</span></div>
+  <div id="hero-name">BOLT • Duelist</div>
+</div>
+
+<div id="hud-bottom-right">
+  <div id="ult-wrap"><div id="ult-fill"></div><span id="ult-text">ULT READY</span></div>
+</div>
+
+<div id="killfeed" aria-live="polite"></div>
+<div id="toast"></div>
+
+<!-- touch controls -->
+<div id="touch-ui">
+  <div id="joy-zone"><div id="joy-base"><div id="joy-knob"></div></div></div>
+  <div id="look-zone"></div>
+  <div id="touch-buttons">
+    <button id="btn-fire" class="tbtn big">FIRE</button>
+    <button id="btn-ult" class="tbtn">ULT</button>
+    <button id="btn-jump" class="tbtn">JUMP</button>
+  </div>
+</div>
+
+<div id="menu">
+  <div class="card">
+    <h1>RIVALS <span>ARENA</span></h1>
+    <p class="sub">3D hero shooter • phone / tablet / desktop • fan-concept inspired by Marvel Rivals</p>
+    <div id="heroes"></div>
+    <div id="hero-desc">Pick your hero. Left stick / WASD to move, drag right side to aim, FIRE to shoot.</div>
+    <button id="btn-play">Play</button>
+    <div class="hint">Desktop: WASD + mouse-drag + click • Mobile: left stick + drag + FIRE • First to 10 KOs</div>
+  </div>
+</div>
+
+<div id="gameover" hidden>
+  <div class="card">
+    <h2 id="go-title">VICTORY</h2>
+    <p id="go-sub"></p>
+    <button id="btn-again">Play Again</button>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "./three.module.js" } }
+</script>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
